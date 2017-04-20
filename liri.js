@@ -1,6 +1,7 @@
 var twitter = require('twitter');
 var keys = require('./key.js');
 var twitKeys = keys.twitterKeys;
+var client = new twitter(twitKeys);
 var userInput = process.argv[2];
 
 switch(userInput) {
@@ -21,7 +22,7 @@ switch(userInput) {
     break;
 }
 function myTweets(){
-    twitKeys.get('search/tweets', {screen_name: 'Chase_w_r', count: 20}, function(error, tweet, response) {
+    client.get('search/tweets', {q: 'Chase_w_r', count: 20}, function(error, tweet, response) {
         if(error){
             console.log(error);
         }else{

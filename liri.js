@@ -1,4 +1,4 @@
-var twitter = require('Twitter');
+var twitter = require('twitter');
 var keys = require('./key.js');
 var twitKeys = keys.twitterKeys;
 var userInput = process.argv[2];
